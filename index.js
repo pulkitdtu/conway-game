@@ -46,6 +46,7 @@ var server = http.createServer(function (request, response) {
     fs.readFile(filePath, function(error, content) {
         if (error) {
             if(error.code == 'ENOENT'){
+		console.log('no such file or directory');
                 fs.readFile('./404.html', function(error, content) {
                     response.writeHead(200, { 'Content-Type': contentType });
                     response.end(content, 'utf-8');
@@ -90,10 +91,7 @@ server.listen(webSocketsServerPort, function() {console.log((new Date()) + " Ser
 //   game.update(3,5, color);
 //   game.update(2,5, color);game.update(1,4, color);
   
-  var partialHashBuff = game.partialHash();
-  var buff =  game.fullHash();
-  controller.sendFullHash();
-  var debug;
+
 // game.testConsole();
 // //game.step();
 // game.step2();
