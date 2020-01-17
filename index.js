@@ -69,10 +69,10 @@ var server = http.createServer(function (request, response) {
 
 //var server = http.createServer(function(request, response) {response.writeen });
 server.listen(webSocketsServerPort, function() {console.log((new Date()) + " Server is listening on port "+ webSocketsServerPort);});
-var wsServer = new webSocketServer({ httpServer: server});
-wsServer.on('request', function(request) {
-    controller.addClient(request);//var connection = request.accept();connection.close();
-});
+//var wsServer = new webSocketServer({ httpServer: server});
+//wsServer.on('request', function(request) {
+//    controller.addClient(request);//var connection = request.accept();connection.close();
+//});
 
 
 
