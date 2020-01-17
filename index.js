@@ -18,7 +18,7 @@ var server = http.createServer(function (request, response) {
     var filePath = '.' + request.url;
     if (filePath == './')
         filePath = './index.html';
-    filePath = 'app/Client'+filePath.slice(1,filePath.length);// removing the . at the first place of filePath.
+    filePath = __dirname+'/Client'+filePath.slice(1,filePath.length);// removing the . at the first place of filePath.
     console.log('request starting...: '+ filePath);
     var extname = path.extname(filePath);
     var contentType = 'text/html';
