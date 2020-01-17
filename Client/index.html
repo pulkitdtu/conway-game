@@ -1,0 +1,170 @@
+<html>
+   <head>
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <h1>
+      <div style="float:left">
+         <a href="#rules">Jump to Rules </a>|<a href="#patterns">  &nbsp Jump to Patterns</a><a href="#info"> &nbsp General Information</a>
+      </div>
+      <div style="position: relative; float:right;">
+         Color given : 
+         <div id="box" style="position: relative; float:right; margin-right: 40; background-color:#000; width: 40px; height: 40px;">  </div>
+      </div>
+   </h1>
+   <h2 >Conway's Game of Life</h2>
+   <body>
+      <p style="font-size:x-large;">Click on the cells to generate pattern: </p>
+      <div style="position: relative; " >
+         <canvas id="game_canvas" width = "1500" height = "1000"  style = "position: relative; border : 1px solid #000000; background : white;">
+            Hello canvas
+         </canvas>
+         <canvas id="game_canvas2" width = "1500" height = "1000"  style = "position: absolute; left: 0;top:0;border : 1px solid #000000;">
+            Hello canvas
+         </canvas>
+      </div>
+      <div  style="border: 1px solid black; position: relative;">
+         <div style="text-align:left;">
+            <input type="button" id="clear" name="clear" value=" Clear the game pattern (from top-left)"> </input>
+            <label><input type="checkbox" id = "grid" name= "grid" value = "Enable Grid">Enable Grid.</input></label>
+         </div>
+         <br><br><br>
+      </div>
+      </div>
+      <div class="row">
+         <div id="patterns" class="column" style="background-color:darkblue;">
+            <br><br>
+            <p style="font-size:40px; color:darkorange;">Submit a readymade pattern:</p>
+            <br>
+            <div style="color: orange; font-size: larger;">  
+               <label><input name="pattern" type="radio" value="gosperGliderGun"> Gosper Glider Gun</input></label><br>
+               <label><input name="pattern" type="radio" value="glider"> Glider</input></label><br>
+               <label><input name="pattern" type="radio" value="blinker"> Blinker</input></label><br>
+               <label><input name="pattern" type="radio" value="beacon"> Beacon</input></label><br>
+               <label><input name="pattern" type="radio" value="combination"> Combination</input></label><br>
+               <br><input id = "patternButton" type="submit"> </input><br><br>
+               Note : Make sure that the top left of the drawing is empty.
+            </div>
+            >
+         </div>
+         <div id ="rules" class="column" style="background-color:blue;">
+            <br><br>
+            <p style="font-size: 40px; color: yellow;">Rules of the Game:</p>
+            <br>
+            <div style="color:yellowgreen; font-size: larger;">
+               <b>For a space that is 'populated':</b><br>
+               <ul>
+                  <li>Each cell with one or no neighbours dies, as if by solitude.<br></li>
+                  <li>Each cell with four or more neighbours dies, as if by overpopulation.<br></li>
+                  <li>Each cell with two or three neighbours survives.</li>
+                  <br><br>
+               </ul>
+               <b>For a space that is 'empty' or 'unpopulated'</b><br>
+               <ul>
+                  <li>cell with three neighbors becomes populated.</li>
+               </ul>
+               <br><br>
+               Make a pattern yourself by clicking on the cells with the mouse.<br>
+               A new generation of cells (corresponding to one iteration of the rules) is initiated automatically.<br>
+               In case, server is present, the game can be played by multiple players( Tested on more than 100 chrome instances simulataneously).<br>
+               <table style="color:yellowgreen;">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" rowspan="2"><small>Rules applied:<br>A cell...</small></td>
+                        <td nowrap="" align="center" colspan="9"><small>...if it has N living neighbors</small></td>
+                     </tr>
+                     <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                     </tr>
+                     <tr>
+                        <td></td>
+                        <td nowrap=""><small>(Dead) becomes alive...</small></td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>&#9745;</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                     </tr>
+                     <tr>
+                        <td></td>
+                        <td nowrap=""><small>(Live) lives on...</small></td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>&#9745;</td>
+                        <td>&#9745;</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                     </tr>
+                     <tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div id="info" style="background-color:white; font-size: large;">
+         <center>
+            <div style="font-size: 20px;">Illustrated Rules<br><img src="image2.jpg" alt="hello"></img></div>
+            <br>The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
+            <br>This game became widely known when it was mentioned in an article published by Scientific American in 1970. 
+            <br>It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. 
+            <br>Depending on the initial conditions, the cells form various patterns throughout the course of the game.
+            <br>Life was invented by the mathematician John Conway in 1970. He choose the rules carefully after trying many other possibilities, some 
+            <br>  of which caused the cells to die too fast and others which caused too many cells to be born. Life balances these tendencies, making 
+            <br>  it hard to tell whether a pattern will die out completely, form a stable population, or grow forever.
+            <br>  Life is just one example of a <em><font color="#6633CC"><b>cellular 
+            <br>    automaton</b></font></em>, which is any system in which rules are applied to cells and their neighbors in a regular grid.
+            <br>    There has been much recent interest in cellular automata, a field of mathematical research. Life is one of the simplest cellular automata 
+            <br>   to have been studied, but many others have been invented, often to simulate systems in the real world.
+            <br>       In addition to the original rules, Life can be played on other kinds of grids with more complex patterns. There are rules for playing 
+            <br>  on hexagons arranged in a honeycomb pattern, and games where cells can have more than two states (imagine live cells with different 
+            colors).
+         </center>
+      </div>
+      <footer style="text-align: center; background-color:lightgreen">
+         <p>Wikipedia page: <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a></p>
+         <p>Created by: Pulkit Chopra.  <a href="https://www.linkedin.com/in/pulkit-chopra-421a6b75/">LinkedIn</a> 
+            <a href="https://www.github.com/pulkitdtu">GitHub</a> 
+         </p>
+      </footer>
+      <div  id="myModal" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content">
+            <div class="modal-header">
+               <span class="close">&times;</span>
+               <h3>Click on cross or anywhere to close this box. Click on the cells to generate pattern:</h3>
+            </div>
+            <div class="modal-body">
+               <img height="500" src="image2.jpg" ></img>
+            </div>
+            <div class="modal-footer">
+               <h3>The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
+                  <br>It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. 
+                  <br>Depending on the initial conditions, the cells form various patterns throughout the course of the game.
+               </h3>
+            </div>
+         </div>
+      </div>
+      <script src = "node.js"></script>
+      <script src = "grid.js"></script>
+      <script src = "game_canvas.js"></script>
+      <script src = "colors.js"></script>
+      <script src = "patterns.js"></script>
+      <script src = "controller.js"></script>
+      <script src = "game_client.js"></script> 
+      <script src = "modal_box.js"></script>
+   </body>
+</html>

@@ -1,0 +1,171 @@
+
+h1
+{
+  overflow: hidden;
+  background-color: aliceblue;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+}
+
+h2
+{
+  /* color: #555;*/
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 120px;font-style: oblique;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-top: 3cm ;
+  position: relative;
+  background-image:url("image.png");
+
+	background-size: 20% 100%;
+  background-repeat: repeat;
+	background-position: center left, top left;
+  color:transparent;
+  -webkit-background-clip:text;
+  background-clip: text;
+  -webkit-animation: animate 40s linear infinite;
+  animation: animate 40s linear infinite;
+}
+@-webkit-keyframes animate {
+  0% {
+    background-position: left 0 top 50px;
+  }
+  20% {
+    background-position: left 800px top -50px;
+  }
+  40% {
+    background-position: left 1800px top -60px;
+  }
+  60% {
+    background-position: left 2400px top -80px;
+  }
+  80% {
+    background-position: left 3400px top -50px;
+  }
+  100% {
+    background-position: left 4400px top 50px;
+  }
+}
+@keyframes animate{
+  0% {
+    background-position: left 0 top 50px;
+  }
+  20% {
+    background-position: left 800px top -50px;
+  }
+  40% {
+    background-position: left 1800px top -60px;
+  }
+  60% {
+    background-position: left 2400px top -80px;
+  }
+  80% {
+    background-position: left 3400px top -50px;
+  }
+  100% {
+    background-position: left 4400px top 50px;
+  }
+}
+
+            *{
+              box-sizing: border-box;
+            }
+            
+            /* Create two equal columns that floats next to each other */
+            .column {
+              float: left;
+              width: 50%;
+              padding: 10px;
+              height: 750px; 
+            }
+            
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 1200px) {
+              .column {
+                width: 100%;
+              }
+            }
+
+
+            
+/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 31%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
