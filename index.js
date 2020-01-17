@@ -1,6 +1,6 @@
 'use strict';
 const controller = require('./controller.js');
-const webSocketsServerPort = process.env.port || 10000;
+const webSocketsServerPort = process.env.PORT || 10000;
 console.log('request starting...: '+ webSocketsServerPort);
 const game      = require('./game.js');
 
