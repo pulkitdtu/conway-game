@@ -2,7 +2,6 @@
 const controller = require('./server/controller/controller.js');
 const webSocketsServerPort = process.env.PORT || 10000;
 console.log('request starting...: '+ webSocketsServerPort);
-const game      = require('./game.js');
 
 controller.init();
 
