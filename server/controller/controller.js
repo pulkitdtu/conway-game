@@ -70,8 +70,8 @@ controller =
         connection.on('message', function(message) {// user sent some message
             controller.receive(message, connection);
       });
-      connection.on('close', function(connection) {// user disconnected
-          controller.removeClient(connection);
+      connection.on('close', function(connection2) {// user disconnected
+          controller.removeClient(this);
       });
         console.log((new Date()) + ' Connection accepted.' + connection.socket.address + ' ___'+connection.socket.localAddress);
         this.clients.add(connection);//connection.color = colors.popColor();
@@ -82,8 +82,9 @@ controller =
         console.log((new Date()) + " Peer "+ connection.remoteAddress + " Disconnected.");
         for(let client of this.clients)
         {
-          if(client.off)
+          if(connection.color == client.color)
             {
+                console.log('Removing client with color = '+ connection.color);
                 this.clients.delete(client);
                 client.close();
                 colors.pushColor(client.color);//colors.push(userColor);// push back user's color to be reused by another user
