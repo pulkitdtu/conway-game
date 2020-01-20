@@ -20,7 +20,7 @@ h2
   line-height: 1;
   margin-top: 3cm ;
   position: relative;
-  background-image:url("images/image.png");
+  background-image:url("../images/image.png");
 
 	background-size: 20% 100%;
   background-repeat: repeat;
