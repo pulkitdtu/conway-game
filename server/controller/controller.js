@@ -120,6 +120,27 @@ controller =
         var hash = fullHash.hash;
         buff2.writeUInt32LE(hash);
         this.send( Buffer.concat([buff, buff2]));
+    },
+    sendEmail : function(data)
+    {
+        nodemailer = require('nodemailer');
+        var transporter = nodemailer.createTransport({
+            host: 'debugmail.io', port: 25, auth: {user: 'pulkitc@hotmail.com', pass: '8d5316e0-41aa-11ea-807b-7bf9979f04e3'}});
+          
+          var mailOptions = {
+            from: 'pulkitc@gmail.com',
+            to: 'pulkitc@hotmail.com',
+            subject: 'Sending Email using Node.js',
+            text: data
+          };
+          
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(' Emai not sent '+ error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
     }
 
 
