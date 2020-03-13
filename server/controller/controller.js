@@ -22,6 +22,7 @@ controller =
         {
             connection.color = colors.popColor([networkData.binaryData[0], networkData.binaryData[1], networkData.binaryData[2]]);
             this.sendToClient(Buffer.from(connection.color), connection);
+            console.log('sending email about : '+connection.remoteAddress);
             this.sendEmail('Color requested by : '+ connection.remoteAddress +'. local address : '+connection.socket.localAddress);
         }
         else if(networkData.binaryData.length ==2)
