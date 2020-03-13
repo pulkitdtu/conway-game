@@ -10,6 +10,7 @@
   "author": "Pulkit Chopra",
   "license": "ISC",
   "dependencies": {
+    "nodemailer": "^6.4.5",
     "uuidv4": "^5.0.0",
     "websocket": "^1.0.30"
   }
