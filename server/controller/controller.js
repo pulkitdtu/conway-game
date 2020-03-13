@@ -134,7 +134,7 @@ controller =
             subject: 'Sending Email using Node.js',
             text: data
           };
-          console.log('sending Email : text : +data);
+          console.log('sending Email : text : ' + data);
           transporter.sendMail(mailOptions, function(error, info){
             if (error) {
               console.log(' Emai not sent '+ error);
